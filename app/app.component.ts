@@ -1,32 +1,22 @@
 /**
- * Created by yukui on 2016/9/17.
+ * Created by yukui on 2016/9/19.
  */
-import {Component} from '@angular/core';
 
-import {Hero} from './hero';
+import {Component} from "@angular/core";
 
 @Component({
-    selector: 'my-app',
-    template: `
-      <h1>{{title}}</h1>
-      <h2> my favorite hero is :{{myHero}}</h2>
-      <p>heroes:</p>
-      <ul>
-        <li *ngFor = "let hero of heroes">
-          {{hero.name}}
-        </li>
-      </ul>
-      <p *ngIf="heroes.length > 3">There are many heroes!</p>
-    `
+   selector:'my-app',
+    template:`
+       <h1>{{title}}</h1>
+       <nav>
+         <a routerLink="/dashboard" routerLinkActive="active">dashboard</a>
+         <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+       </nav>
+       <router-outlet></router-outlet>
+`,
+    styleUrls:['app/app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent{
     title = 'Tour of Heroes';
-    heroes = [
-        new Hero(1, 'Windstorm'),
-        new Hero(13, 'Bombasto'),
-        new Hero(15, 'Magneta'),
-        new Hero(20, 'Tornado')
-    ];
-    myHero = this.heroes[0];
 }

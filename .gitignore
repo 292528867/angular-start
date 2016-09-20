@@ -86,3 +86,9 @@ jspm_packages
 typings
 .idea
 
+app/*.js
+app/*.js.map
+app/*.*.js
+app/*.*.js.map
+
+
