@@ -18,12 +18,16 @@ const appRoutes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/contact',
         pathMatch: 'full'
     },
     {
         path: 'detail/:id',
         component: HeroDetailComponent
+    },
+    {
+        path:'contact',
+        loadChildren:'app/contact/contact.module#ContactModule'
     }
 ]
 

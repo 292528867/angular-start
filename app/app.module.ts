@@ -16,24 +16,32 @@ import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {HeroSearchComponent} from "./hero-search.component";
 import {HeroSearchService} from "./hero-search.service";
+import {HighlightDirective} from "./highlight.directive";
+import {TitleComponent} from "./title.component";
+import {UserService} from "./user.service";
+import {ContactModule} from "./contact/contact.module";
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
-        routing
+        routing,
+        ContactModule
     ],
     declarations: [
         AppComponent,
         HeroDetailComponent,
         HeroesComponent,
         DashboardComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
+        HighlightDirective,
+        TitleComponent
     ],
     providers: [
         HeroService,
-        HeroSearchService
+        HeroSearchService,
+        UserService
     ],
     bootstrap: [AppComponent]
 })
